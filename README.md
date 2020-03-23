@@ -1,17 +1,31 @@
 # EasyFirebase
 this is a firebase basic plugin for unreal engine 4 mobile developer, both c++ and blueprint supported.
 
-# Initlize
 
+# Get Start
 
-# anonymously login
+ ## Initlize
+ befor use this plugin, u need first initlize firebase in level begineplay
+ ![ScreenShot](img/initlize.PNG)
+
+ ## anonymously login
+ for guest user, we can use anonymously login:
+ ![ScreenShot](img/anonymously.PNG)
+
+ ## email login
+ register email user with password:
+ ![ScreenShot](img/create_email_user.PNG)
  
+ login with email and password:
+ ![ScreenShot](img/loginemailuser.PNG)
 
-# email login
+ ## set value
+ set value to firebase realtime database:
+  ![ScreenShot](img/setvalue.PNG)
 
-# set value
-
-# get value
+ ## get value
+ get value from firebase realtime database:
+  ![ScreenShot](img/readvalue.PNG)
 
 
 # firebase auth tutorial:
