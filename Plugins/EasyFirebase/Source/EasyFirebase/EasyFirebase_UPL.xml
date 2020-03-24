@@ -187,8 +187,89 @@ EasyAds - unreal engine 4 EasyFirebase plugin
 	<!-- optional additions to proguard -->
   <proguardAdditions>
     <insert>
-      
+      -keep,includedescriptorclasses public class com.google.android.gms.common.GoogleApiAvailability { *; }
+      -keep,includedescriptorclasses public class com.google.android.gms.common.GoogleApiAvailability{ *; }
+      -keep,includedescriptorclasses public class com.google.android.gms.crash.internal.api.CrashApiImpl { *; }
+      -keep,includedescriptorclasses public class com.google.android.gms.tasks.OnCanceledListener { *; }
+      -keep,includedescriptorclasses public class com.google.android.gms.tasks.OnFailureListener { *; }
+      -keep,includedescriptorclasses public class com.google.android.gms.tasks.OnSuccessListener { *; }
+      -keep,includedescriptorclasses public class com.google.android.gms.tasks.Task { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.FirebaseApp{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.FirebaseOptions{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.FirebaseOptions$Builder{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.platforminfo.GlobalLibraryVersionRegistrar{ *; }
+      -keep,includedescriptorclasses public class dalvik.system.DexClassLoader{ *; }
 
+      -keepattributes *Annotation*
+      -keepattributes Signature
+      -keepclasseswithmembers class * { @retrofit.http.* &lt;methods&gt;; }
+
+      -keep class retrofit.** { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.app.internal.cpp.Log { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.AdditionalUserInfo{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.AuthCredential{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.AuthResult{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.EmailAuthProvider{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FacebookAuthProvider{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuth { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuth{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuthActionCodeException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuth$AuthStateListener { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuthEmailException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuthException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuth$IdTokenListener { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuthInvalidCredentialsException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuthInvalidUserException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuthRecentLoginRequiredException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuthUserCollisionException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuthWeakPasswordException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseAuthWebException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseUser{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.FirebaseUserMetadata{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.GetTokenResult{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.GithubAuthProvider{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.GoogleAuthProvider{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.OAuthProvider{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.OAuthProvider$Builder{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.OAuthProvider$CredentialBuilder{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.PhoneAuthCredential { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.PhoneAuthCredential{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.PhoneAuthProvider { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.PhoneAuthProvider{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.PhoneAuthProvider$ForceResendingToken { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.PhoneAuthProvider$OnVerificationStateChangedCallbacks { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.PlayGamesAuthProvider{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.SignInMethodQueryResult{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.TwitterAuthProvider{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.UserInfo{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.auth.UserProfileChangeRequest$Builder{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.FirebaseApiNotAvailableException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.FirebaseException { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.FirebaseException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.FirebaseNetworkException{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.FirebaseTooManyRequestsException{ *; }
+      -keep,includedescriptorclasses public class java.util.concurrent.TimeUnit{ *; }
+
+      -keep,includedescriptorclasses public class com.google.firebase.database.ChildEventListener { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.DatabaseError { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.DatabaseError{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.DatabaseReference{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.DataSnapshot { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.DataSnapshot{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.FirebaseDatabase{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.Logger$Level{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.MutableData { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.MutableData{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.OnDisconnect{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.Query{ *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.Transaction { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.Transaction$Handler { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.Transaction$Result { *; }
+      -keep,includedescriptorclasses public class com.google.firebase.database.ValueEventListener { *; }
+
+      -keep,includedescriptorclasses public class com.google.firebase.analytics.FirebaseAnalytics{ *; }
+      
+      
     </insert>
   </proguardAdditions>
 
