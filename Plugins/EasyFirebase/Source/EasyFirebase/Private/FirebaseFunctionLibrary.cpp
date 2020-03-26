@@ -69,6 +69,11 @@ namespace firebase
 
 bool UFirebaseFunctionLibrary::FireBaseInitialize()
 {
+	if (g_firebaseApp)
+	{
+		return true;
+	}
+
 	::firebase::AppOptions option;
 #if PLATFORM_ANDROID || PLATFORM_WINDOWS
 	FString strJsonData;
