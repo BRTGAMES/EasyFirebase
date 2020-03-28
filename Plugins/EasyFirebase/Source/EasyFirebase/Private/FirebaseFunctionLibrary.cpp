@@ -69,7 +69,7 @@ namespace firebase
 
 bool UFirebaseFunctionLibrary::FireBaseInitialize()
 {
-	if (g_firebaseApp)
+	if (g_firebaseApp) 
 	{
 		return true;
 	}

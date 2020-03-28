@@ -20,8 +20,15 @@ UFirebaseQuery::~UFirebaseQuery()
 {
 	if (mQuery.is_valid())
 	{
-		mQuery.RemoveAllChildListeners();
-		mQuery.RemoveAllValueListeners();
+		for (std::set<firebase::database::ValueListener*>::iterator it = mValueListenerList.begin(); it != mValueListenerList.end(); it++)
+		{
+			mQuery.RemoveValueListener(*it);
+		}
+
+		for (std::set<firebase::database::ChildListener*>::iterator it = mChildListenerList.begin(); it != mChildListenerList.end(); it++)
+		{
+			mQuery.RemoveChildListener(*it);
+		}
 	}
 }
 
@@ -252,6 +259,8 @@ UFirebaseValueListener* UFirebaseQuery::AddValueListener()
 	UFirebaseValueListener* pListener = NewObject<UFirebaseValueListener>();
 	mQuery.AddValueListener(pListener->mValueListenerImp.Get() );
 
+	mValueListenerList.insert(pListener->mValueListenerImp.Get() );
+
 	return pListener;
 }
 
@@ -308,6 +317,8 @@ UFirebaseChildListener* UFirebaseQuery::AddChildListener()
 
 	UFirebaseChildListener* pChildListener = NewObject<UFirebaseChildListener>();
 	mQuery.AddChildListener(pChildListener->mChildListenerImp.Get());
+
+	mChildListenerList.insert(pChildListener->mChildListenerImp.Get());
 
 	return pChildListener;
 }

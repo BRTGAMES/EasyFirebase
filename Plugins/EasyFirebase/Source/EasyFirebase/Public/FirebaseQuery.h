@@ -5,7 +5,9 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "firebase/database/query.h"
+#include <set>
 #include "FirebaseQuery.generated.h"
+
 
 class UFirebaseFutureDataSnapshot;
 class UFirebaseVariant;
@@ -96,4 +98,9 @@ public:
 	void RemoveAllChildListeners();
 
 	firebase::database::Query mQuery;
+
+private:
+	
+	std::set<firebase::database::ValueListener*> mValueListenerList;
+	std::set< firebase::database::ChildListener*> mChildListenerList;
 };
