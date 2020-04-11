@@ -133,6 +133,13 @@ EasyAds - unreal engine 4 EasyFirebase plugin
     <insert>
       apply plugin: 'com.google.gms.google-services'
       apply from: 'firebase_dependencies.gradle'
+      ext{
+        android{
+          defaultConfig{
+            multiDexEnabled true
+          }
+        }
+      }
     </insert>
   </buildGradleAdditions>
 	
