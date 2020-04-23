@@ -307,8 +307,14 @@ EasyAds - unreal engine 4 EasyFirebase plugin
         import com.google.android.gms.common.api.ApiException;
         import com.google.android.gms.tasks.Task;
 
+      </insert>
+    </gameActivityImportAdditions>
 
-        class FirebaseGoogleLogin {
+	<!-- optional additions to the GameActivity class in GameActivity.java -->
+	<gameActivityClassAdditions>
+
+		<insert>
+			class FirebaseGoogleLogin {
         private static final String TAG = "FirebaseGoogle";
         public static final int RC_SIGN_IN = 10000;
         private Activity mActiviry;
@@ -342,19 +348,15 @@ EasyAds - unreal engine 4 EasyFirebase plugin
                 nativeGoogleSignInResult(true, account.getIdToken() );
             }catch (ApiException e){
                 nativeGoogleSignInResult(false, "");
-                Log.d(TAG, "GoogleSignIn Fail:"+e.getStatusCode() );
+                //Log.d(TAG, "GoogleSignIn Fail:"+e.getStatusCode() ); Build error when packaging on android
             }
         }
           }
 
           public native void nativeGoogleSignInResult(boolean success, String idToken);
       }
-      </insert>
-    </gameActivityImportAdditions>
-
-	<!-- optional additions to the GameActivity class in GameActivity.java -->
-	<gameActivityClassAdditions>
-
+			</insert>
+		
     <if condition="EnableFacebookAuth">
       <true>
         <insert>
